@@ -11,7 +11,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    binding.pry
     @post.user = current_user
     @post.save
     if @post.valid?

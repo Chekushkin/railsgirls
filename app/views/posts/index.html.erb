@@ -1,10 +1,15 @@
 <h1>Posts</h1>
 <%=link_to("New Post", new_post_path) %>
-<ul>
-    <% Post.all.each do |post| %>
+<div>
+  <ul>
+  <% Post.all.each do |post| %>
+    <div>
       <%= "Posted by "+ post.user.email %>
-      <%=button_to("Delete Post", post_path(post), method: :delete) %>
+      <% if current_user == post.user %>
+        <%=button_to("Delete Post", post_path(post), method: :delete) %>
+      <% end %>
       <li><%= post.description %></li>
-      <li><%= image_tag(post.link) %></li>
-    <% end %>
-</ul>
+      <li><%= image_tag(post.link) %></li></div>
+  <% end %>
+  </ul>
+</div>
