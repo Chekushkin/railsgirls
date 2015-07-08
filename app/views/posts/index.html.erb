@@ -1,0 +1,10 @@
+<h1>Posts</h1>
+<%=link_to("New Post", new_post_path) %>
+<ul>
+    <% Post.all.each do |post| %>
+      <%= "Posted by "+ post.user.email %>
+      <%=button_to("Delete Post", post_path(post), method: :delete) %>
+      <li><%= post.description %></li>
+      <li><%= image_tag(post.link) %></li>
+    <% end %>
+</ul>
