@@ -1,17 +1,18 @@
-<h2 class="text-center"><font color="#EFEFEF">Log in</font></h2>
+<h2 class="text-center login-page">Log in</h2>
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <div class="col-md-6 col-md-offset-3">
     <div class="field">
-      <%= f.label :email %><b>
+      <%= f.label :email, class: "login-page" %><b>
       <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "example@mail.com" %>
     </div>
   </div>
 
   <div class="col-md-6 col-md-offset-3">
     <div class="field">
-      <%= f.label :password %><b>
+      <%= f.label :password, class: "login-page" %><b>
       <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "password" %>
     </div>
   </div>
@@ -20,7 +21,7 @@
     <% if devise_mapping.rememberable? -%>
       <div class="field">
         <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <%= f.label :remember_me, class: "login-page" %>
       </div>
     <% end %>
 
