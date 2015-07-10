@@ -5,7 +5,7 @@
 
   <div class="col-md-6 col-md-offset-3">
     <div class="field">
-      <%= f.label :email, class: "login-page" %><br />
+      <%= f.label :email, class: "login-page" %><b>
       <%= f.email_field :email, autofocus: true, :class => "form-control" %>
     </div>
   </div>
@@ -22,11 +22,11 @@
 
   <div class="col-md-6 col-md-offset-3">
     <div class="field">
-      <%= f.label :password_confirmation, class: "login-page" %><br />
+      <%= f.label :password_confirmation, class: "login-page" %><b>
       <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
     </div>
 
-    <span>.</span>
+    <br></br>
 
     <div class="actions">
       <%= f.submit "Sign up", :class => "btn btn-primary btn-lg btn-block" %>
